@@ -1,0 +1,28 @@
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
+}
+
+.search input {
+    width: 100%;
+    max-width: 400px;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--gray-500);
+    color: var(--gray-100);
+    font-size: 1rem;
+}
+
+.button{
+    display : flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 8px;
+    border: 0;
+    margin-left: 8px;
+    background-color: var(--blue);
+    transition: filter 0.2s;
+}
