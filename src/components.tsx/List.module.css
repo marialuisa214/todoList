@@ -1,0 +1,73 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.listInfo {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.boxInfo {
+    display: flex;
+    align-items: center;
+    color: var(--purple);
+    margin: 0 10px;
+    
+    
+}
+.boxNumberActivit {
+    display: flex;
+    color: var(--gray-200);
+    align-items: center;
+    margin: 0 10px;
+    border-radius: 10px;
+    background: var(--gray-400);
+    margin-right: 3px;
+    padding: 1.5px 5px;
+}
+
+
+/* Itens da minha lista de afazeres */
+.boxActivit {
+    display: flex;
+    max-width: 600px;
+    width: auto;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--gray-500);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: var(--gray-200);
+}
+
+.activit {
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+}
+.activit p {
+    margin: 10px;
+}
+.circle {
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+    background: none;
+    border: none;
+}
+
+.trash { 
+    color: var(--gray-300);
+    background: none;
+    border: none;
+}

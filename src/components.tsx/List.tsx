@@ -1,25 +1,57 @@
 import { Circle, Trash } from "@phosphor-icons/react";
-
+import styles from './List.module.css';
 export function List() {
     return(
-        <div>
-            <div>
-                <div>
-                    <p>tarefas Criadas</p>
-                    <p>6</p>
+        <div className={styles.list}>
+            <div className={styles.listInfo}>
+                <div className={styles.boxInfo}>
+                    <strong>tarefas Criadas</strong>
+                    <strong className={styles.boxNumberActivit}>6</strong>
                 </div>
-                <div>
-                    <p>Concluidas</p>
-                    <p> 2 de 6</p>
+                <div className={styles.boxInfo}>
+                    <strong>Concluidas</strong>
+                    <strong className={styles.boxNumberActivit}> 2 de 6</strong>
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <Circle/>
+
+
+
+
+            <div className={styles.boxActivit}>
+                <div className={styles.activit}>
+                    <button className={styles.circle}>
+                        <Circle/>
+                    </button>
                     <p>Tenho que lavar a louça</p>
                 </div>
-                <Trash/>
+                <button className={styles.trash}>
+                    <Trash/>
+                </button>
+            </div>
+
+            <div className={styles.boxActivit}>
+                <div className={styles.activit}>
+                    <button className={styles.circle}>
+                        <Circle/>
+                    </button>
+                    <p>Tenho que lavar a louça</p>
+                </div>
+                <button className={styles.trash}>
+                    <Trash/>
+                </button>
+            </div>
+
+            <div className={styles.boxActivit}>
+                <div className={styles.activit}>
+                    <button className={styles.circle}>
+                        <Circle/>
+                    </button>
+                    <p>Tenho que lavar a louça</p>
+                </div>
+                <button className={styles.trash}>
+                    <Trash/>
+                </button>
             </div>
         
         </div>

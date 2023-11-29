@@ -8,8 +8,6 @@ export function App() {
       <Header/>
       <Search/>
       <List/>
-      <List/>
-      <List/>
     </div>
   );
 }
