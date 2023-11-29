@@ -21,9 +21,9 @@
     display : flex;
     align-items: center;
     padding: 0 1rem;
+    margin-left: 8px;
     border-radius: 8px;
     border: 0;
-    margin-left: 8px;
     background-color: var(--blue);
     transition: filter 0.2s;
 }
