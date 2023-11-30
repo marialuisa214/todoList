@@ -28,8 +28,6 @@ export function List( { listOfTodos, setTodo } : listTodos) {
         })
         newTodoList.push(newTodoDone)
         setTodo(newTodoList)
-
-
     }
 
     function handleRemoveTodo(todoIdToDelete: number) {
@@ -39,16 +37,18 @@ export function List( { listOfTodos, setTodo } : listTodos) {
         })
         setTodo(todoListWitouthDeleteOne)
     }
+
+    const listOfTodosDone = listOfTodos.filter(todo => todo.done === true).length
     return(
         <div className={styles.list}>
             <div className={styles.listInfo}>
                 <div className={styles.boxInfo}>
                     <strong>tarefas Criadas</strong>
-                    <strong className={styles.boxNumberActivit}>6</strong>
+                    <strong className={styles.boxNumberActivit}>{listOfTodos.length}</strong>
                 </div>
                 <div className={styles.boxInfo}>
                     <strong>Concluidas</strong>
-                    <strong className={styles.boxNumberActivit}> 2 de 6</strong>
+                    <strong className={styles.boxNumberActivit}> { listOfTodosDone} de {listOfTodos.length}</strong>
                 </div>
             </div>
 

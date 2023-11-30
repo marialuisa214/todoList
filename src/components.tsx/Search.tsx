@@ -18,6 +18,8 @@ export function Search({ listOfTodos, setTodo}: SearchProps) {
     const [newTodo, setNewTodo] = useState('')
 
     function handleNewTodo(evento: FormEvent) {
+
+        
         evento.preventDefault() 
         const teste = {
             id: Math.random(),
