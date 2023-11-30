@@ -1,27 +1,28 @@
 import { Circle, Trash } from "@phosphor-icons/react";
-import { useState } from 'react'
 
 import styles from './List.module.css';
 
-export function List() {
-    const  [todos, setTodos] = useState([
-        {
-            id: 1,
-            title: 'Fazer café',
-            done: false
-        },
-        {
-            id: 2,
-            title: 'Lavar a louça',
-            done: false
-        }
-    ])
+
+interface todoProps {
+    id: number;
+    title: string;
+    done: boolean;
+}
+
+interface listTodos {
+    listOfTodos: todoProps[];
+    setTodo: (todo: todoProps[]) => void;
+
+}
+
+export function List( { listOfTodos, setTodo } : listTodos) {
 
     function handleRemoveTodo(commentIdToDelete: number) {
-        const todoListWitouthDeleteOne = todos.filter(todo => {
+
+        const todoListWitouthDeleteOne = listOfTodos.filter(todo => {
             return todo.id !== commentIdToDelete 
         })
-        setTodos(todoListWitouthDeleteOne)
+        setTodo(todoListWitouthDeleteOne)
     }
 
 
@@ -41,7 +42,7 @@ export function List() {
             </div>
 
             
-                {todos.map(todo => {
+                {listOfTodos.map(todo  => {
 
                     return (
                         <div className={styles.boxActivit}>
