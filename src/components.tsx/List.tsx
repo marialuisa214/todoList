@@ -1,4 +1,4 @@
-import { Circle, Trash } from "@phosphor-icons/react";
+import { CheckCircle, Circle, Trash } from "@phosphor-icons/react";
 
 import styles from './List.module.css';
 
@@ -17,17 +17,28 @@ interface listTodos {
 
 export function List( { listOfTodos, setTodo } : listTodos) {
 
-    function handleRemoveTodo(commentIdToDelete: number) {
+    function handleDoneTodo( todoDone: todoProps) {
+        const newTodoDone = {
+            id: todoDone.id,
+            title: todoDone.title,
+            done: !todoDone.done
+        }
+        const newTodoList = listOfTodos.filter(todo => {
+            return todo.id !== todoDone.id
+        })
+        newTodoList.push(newTodoDone)
+        setTodo(newTodoList)
+
+
+    }
+
+    function handleRemoveTodo(todoIdToDelete: number) {
 
         const todoListWitouthDeleteOne = listOfTodos.filter(todo => {
-            return todo.id !== commentIdToDelete 
+            return todo.id !== todoIdToDelete 
         })
         setTodo(todoListWitouthDeleteOne)
     }
-
-
-
-
     return(
         <div className={styles.list}>
             <div className={styles.listInfo}>
@@ -42,24 +53,39 @@ export function List( { listOfTodos, setTodo } : listTodos) {
             </div>
 
             
-                {listOfTodos.map(todo  => {
+            {listOfTodos.map(todo  => {
 
-                    return (
-                        <div className={styles.boxActivit}>
-                            <div className={styles.activit}>
-                                <button className={styles.circle}>
-                                    <Circle/>
+                
+                    {if (todo.done === true) {
+                        return (
+                            <div className={styles.boxActivit}>
+                                <div className={styles.activit}>
+                                    <button className={styles.circle}>
+                                        <CheckCircle color='var(--purple)'/>
+                                    </button>
+                                    <p><s> {todo.title}</s></p>
+                                </div>
+                                <button onClick={() => handleRemoveTodo(todo.id)} className={styles.trash}>
+                                    <Trash />
                                 </button>
-                                <p>{todo.title}</p>
-                            </div>
-                            <button onClick={() => handleRemoveTodo(todo.id)} className={styles.trash}>
-                                <Trash />
+                            </div>)
+                    }
+                    else return (
+                    <div className={styles.boxActivit}>
+                        <div className={styles.activit}>
+                            <button onClick={ () => handleDoneTodo(todo)} className={styles.circle}>
+                                <Circle/>
                             </button>
+                            <p>{todo.title}</p>
                         </div>
-
+                        <button onClick={() => handleRemoveTodo(todo.id)} className={styles.trash}>
+                            <Trash />
+                        </button>
+                    </div>
                     )
-                })}
-        
+                }
+            })}
+            
         </div>
     )
 }
