@@ -1,4 +1,4 @@
-# TodoLIS
+# TodoList
 Exercício proposto no 1º desafio React, do Curso RocketSeat da trilha de ReactJS do Ignite.
 
 # Sobre o desafio
